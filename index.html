@@ -1,26 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
   <meta charset="UTF-8">
   <title>Zaynoo English Placement Test</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .login-box {
+      background: #fff;
+      padding: 25px;
+      width: 90%;
+      max-width: 380px;
+      border-radius: 15px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+      text-align: center;
+    }
+    h2 {
+      margin-bottom: 20px;
+      color: #2c5364;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 25px;
+      background: linear-gradient(135deg, #d4af37, #f9e076);
+      color: #000;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .error {
+      color: red;
+      margin-top: 10px;
+      display: none;
+    }
+  </style>
 </head>
 <body>
 
-  <h1>Zaynoo English Placement Test</h1>
+  <div class="login-box">
+    <h2>تسجيل الدخول للاختبار</h2>
 
-  <div id="loginBox">
-    <input type="text" id="studentCode" placeholder="Student Code">
-    <input type="password" id="studentPass" placeholder="Password">
-    <button onclick="login()">Start Test</button>
+    <input type="text" id="code" placeholder="كود الطالب">
+    <input type="password" id="password" placeholder="كلمة المرور">
+
+    <button onclick="login()">دخول</button>
+
+    <div class="error" id="error">بيانات الدخول غير صحيحة</div>
   </div>
 
-  <div id="examBox" style="display:none">
-    <p id="timer">30:00</p>
-    <div id="questionBox"></div>
-    <button onclick="submitExam()">Submit</button>
-  </div>
+  <script>
+    function login() {
+      const code = document.getElementById("code").value.trim();
+      const password = document.getElementById("password").value.trim();
 
-  <script type="module" src="app.js"></script>
+      // الطلاب المسموح لهم
+      if (code === "30404091600666" && password === "01101460494") {
+        alert("أهلاً ياسمين أنور عبد النبي ✅");
+      } 
+      else if (code === "30112110200576" && password === "122001") {
+        alert("أهلاً محمد علاء الدين ✅");
+      } 
+      else {
+        document.getElementById("error").style.display = "block";
+      }
+    }
+  </script>
+
 </body>
 </html>
