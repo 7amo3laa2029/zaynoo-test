@@ -1,14 +1,26 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Zaynoo English Placement Test</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Zaynoo English Placement Test</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Zaynoo English Placement Test</h1>
-<p>This is the main exam page.</p>
-<script type="module" src="app.js"></script>
+
+  <h1>Zaynoo English Placement Test</h1>
+
+  <div id="loginBox">
+    <input type="text" id="studentCode" placeholder="Student Code">
+    <input type="password" id="studentPass" placeholder="Password">
+    <button onclick="login()">Start Test</button>
+  </div>
+
+  <div id="examBox" style="display:none">
+    <p id="timer">30:00</p>
+    <div id="questionBox"></div>
+    <button onclick="submitExam()">Submit</button>
+  </div>
+
+  <script type="module" src="app.js"></script>
 </body>
 </html>
